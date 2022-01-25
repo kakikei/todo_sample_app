@@ -37,7 +37,7 @@ class _TodoListPageState extends State<TodoListPage> {
       // *** 追加する部分 ***
       // AppBarを表示し、タイトルも設定
       appBar: AppBar(
-        title: Text('リスト一覧'),
+        title: const Text('リスト一覧'),
       ),
       body: ListView.builder(
         itemCount: todoList.length,
@@ -64,7 +64,7 @@ class _TodoListPageState extends State<TodoListPage> {
             });
           }
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -82,16 +82,16 @@ class _TodoAddPageState extends State<TodoAddPage> {
     return Scaffold(
       // *** 追加する部分 ***
       appBar: AppBar(
-        title: Text('リスト追加'),
+        title: const Text('リスト追加'),
       ),
       // *** 追加する部分 ***
       body: Container(
         // 余白を付ける
-        padding: EdgeInsets.all(64),
+        padding: const EdgeInsets.all(64),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(_text, style: TextStyle(color: Colors.blue)),
+            Text(_text, style: const TextStyle(color: Colors.blue)),
             const SizedBox(height: 8),
             // テキスト入力
             TextField(
@@ -110,7 +110,8 @@ class _TodoAddPageState extends State<TodoAddPage> {
                 onPressed: () {
                   Navigator.of(context).pop(_text);
                 },
-                child: Text('リスト追加', style: TextStyle(color: Colors.white)),
+                child:
+                    const Text('リスト追加', style: TextStyle(color: Colors.white)),
               ),
             ),
             const SizedBox(height: 8),
@@ -124,7 +125,7 @@ class _TodoAddPageState extends State<TodoAddPage> {
                   // "pop"で前の画面に戻る
                   Navigator.of(context).pop();
                 },
-                child: Text('キャンセル'),
+                child: const Text('キャンセル'),
               ),
             ),
           ],
